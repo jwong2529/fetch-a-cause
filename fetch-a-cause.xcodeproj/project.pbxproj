@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		296025082D73C6B3003CC5FC /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 296025072D73C6B3003CC5FC /* MapboxMaps */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		29BAA3312D73B7B8000197CF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296025082D73C6B3003CC5FC /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = "fetch-a-cause";
 			packageProductDependencies = (
+				296025072D73C6B3003CC5FC /* MapboxMaps */,
 			);
 			productName = "fetch-a-cause";
 			productReference = 29BAA3202D73B7B6000197CF /* fetch-a-cause.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 29BAA3172D73B7B6000197CF;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				296025062D73C6B3003CC5FC /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 29BAA3212D73B7B6000197CF /* Products */;
 			projectDirPath = "";
@@ -556,6 +565,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		296025062D73C6B3003CC5FC /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		296025072D73C6B3003CC5FC /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296025062D73C6B3003CC5FC /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 29BAA3182D73B7B6000197CF /* Project object */;
 }
