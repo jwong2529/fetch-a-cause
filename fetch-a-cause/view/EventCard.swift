@@ -12,6 +12,9 @@ struct EventCard: View {
     let description: String
     let backgroundColor: Color
     let actionColor: Color
+    let date: String
+    let time: String
+    let orgName: String
     var showArrow: Bool = false
 
     var body: some View {
@@ -26,7 +29,23 @@ struct EventCard: View {
                     .font(.custom("Rubik-Regular", size: 12))
                     .lineSpacing(4)
                     .foregroundColor(.black)
-
+                
+                // Event Date & Time
+                HStack {
+                    Text(date)
+                        .font(.custom("Rubik-Regular", size: 12))
+                        .foregroundColor(.gray)
+                    Text("•")
+                        .foregroundColor(.gray)
+                    Text(time)
+                        .font(.custom("Rubik-Regular", size: 12))
+                        .foregroundColor(.gray)
+                }
+                
+                // Organization Name
+                Text("Organized by: \(orgName)")
+                    .font(.custom("Rubik-Regular", size: 12))
+                    .foregroundColor(.gray)
 
                 HStack(spacing: 7) {
                     Text("Join Now")
@@ -60,14 +79,14 @@ struct EventCard: View {
     }
 }
 
-struct EventCard_Previews: PreviewProvider {
-    static var previews: some View {
-        EventCard(
-            eventName: "Sample Event",
-            description: "Sample description",
-            backgroundColor: .pinkBackground,
-            actionColor: .actionPink
-        )
-        .padding()
-    }
-}
+//struct EventCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EventCard(
+//            eventName: "Sample Event",
+//            description: "Sample description",
+//            backgroundColor: .pinkBackground,
+//            actionColor: .actionPink
+//        )
+//        .padding()
+//    }
+//}

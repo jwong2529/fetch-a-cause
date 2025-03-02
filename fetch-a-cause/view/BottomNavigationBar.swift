@@ -28,18 +28,6 @@ struct BottomNavigationBar: View {
     }
 }
 
-// Placeholder views for navigation
-struct HomeView: View {
-    var body: some View {
-        NavigationView {
-            Text("Home View")
-                .navigationTitle("Home")
-        }
-    }
-}
-
-
-
 // Custom style for the tab bar
 struct CustomTabBarStyle: ViewModifier {
     func body(content: Content) -> some View {
@@ -47,7 +35,7 @@ struct CustomTabBarStyle: ViewModifier {
             .onAppear {
                 let appearance = UITabBarAppearance()
                 appearance.configureWithOpaqueBackground()
-                appearance.backgroundColor = .white
+//                appearance.backgroundColor = .white
 
                 UITabBar.appearance().standardAppearance = appearance
                 UITabBar.appearance().scrollEdgeAppearance = appearance
