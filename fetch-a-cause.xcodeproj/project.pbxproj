@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		296025422D73E024003CC5FC /* AppConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 296025412D73E01A003CC5FC /* AppConfig.xcconfig */; };
+		296025492D73F613003CC5FC /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 296025482D73F613003CC5FC /* FirebaseAnalytics */; };
+		2960254B2D73F613003CC5FC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254A2D73F613003CC5FC /* FirebaseAuth */; };
+		2960254D2D73F613003CC5FC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254C2D73F613003CC5FC /* FirebaseCore */; };
+		2960254F2D73F613003CC5FC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254E2D73F613003CC5FC /* FirebaseDatabase */; };
 		F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = F650E7E72D73D3AA00C95076 /* MapboxMaps */; };
-		F650E8392D740DF500C95076 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 296025482D73F613003CC5FC /* FirebaseAnalytics */; };
-		F650E83A2D740DF500C95076 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254A2D73F613003CC5FC /* FirebaseAuth */; };
-		F650E83B2D740DF500C95076 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254C2D73F613003CC5FC /* FirebaseCore */; };
-		F650E83C2D740DF500C95076 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254E2D73F613003CC5FC /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,10 +76,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F650E83C2D740DF500C95076 /* FirebaseDatabase in Frameworks */,
-				F650E83B2D740DF500C95076 /* FirebaseCore in Frameworks */,
-				F650E83A2D740DF500C95076 /* FirebaseAuth in Frameworks */,
-				F650E8392D740DF500C95076 /* FirebaseAnalytics in Frameworks */,
+				2960254F2D73F613003CC5FC /* FirebaseDatabase in Frameworks */,
+				296025492D73F613003CC5FC /* FirebaseAnalytics in Frameworks */,
+				2960254B2D73F613003CC5FC /* FirebaseAuth in Frameworks */,
+				2960254D2D73F613003CC5FC /* FirebaseCore in Frameworks */,
 				F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296025422D73E024003CC5FC /* AppConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +437,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fetch-a-cause/Preview Content\"";
-				DEVELOPMENT_TEAM = YR7X66DC3L;
+				DEVELOPMENT_TEAM = KV4D48PA65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fetch-a-cause/Info.plist";
@@ -450,7 +452,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -466,7 +468,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fetch-a-cause/Preview Content\"";
-				DEVELOPMENT_TEAM = YR7X66DC3L;
+				DEVELOPMENT_TEAM = KV4D48PA65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fetch-a-cause/Info.plist";
@@ -481,7 +483,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
