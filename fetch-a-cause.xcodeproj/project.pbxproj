@@ -13,6 +13,7 @@
 		2960254D2D73F613003CC5FC /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254C2D73F613003CC5FC /* FirebaseCore */; };
 		2960254F2D73F613003CC5FC /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 2960254E2D73F613003CC5FC /* FirebaseDatabase */; };
 		F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = F650E7E72D73D3AA00C95076 /* MapboxMaps */; };
+		F650E98E2D74E3C300C95076 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = F650E98D2D74E3C300C95076 /* GoogleGenerativeAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +36,7 @@
 /* Begin PBXFileReference section */
 		296025152D73D28E003CC5FC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		296025412D73E01A003CC5FC /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
-		29BAA3202D73B7B6000197CF /* Fetch-A-Cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch-A-Cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29BAA3202D73B7B6000197CF /* fetch-a-cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fetch-a-cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA3302D73B7B8000197CF /* fetch-a-causeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA33A2D73B7B8000197CF /* fetch-a-causeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -79,6 +80,7 @@
 				2960254F2D73F613003CC5FC /* FirebaseDatabase in Frameworks */,
 				296025492D73F613003CC5FC /* FirebaseAnalytics in Frameworks */,
 				2960254B2D73F613003CC5FC /* FirebaseAuth in Frameworks */,
+				F650E98E2D74E3C300C95076 /* GoogleGenerativeAI in Frameworks */,
 				2960254D2D73F613003CC5FC /* FirebaseCore in Frameworks */,
 				F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */,
 			);
@@ -116,7 +118,7 @@
 		29BAA3212D73B7B6000197CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29BAA3202D73B7B6000197CF /* Fetch-A-Cause.app */,
+				29BAA3202D73B7B6000197CF /* fetch-a-cause.app */,
 				29BAA3302D73B7B8000197CF /* fetch-a-causeTests.xctest */,
 				29BAA33A2D73B7B8000197CF /* fetch-a-causeUITests.xctest */,
 			);
@@ -148,9 +150,10 @@
 				2960254A2D73F613003CC5FC /* FirebaseAuth */,
 				2960254C2D73F613003CC5FC /* FirebaseCore */,
 				2960254E2D73F613003CC5FC /* FirebaseDatabase */,
+				F650E98D2D74E3C300C95076 /* GoogleGenerativeAI */,
 			);
 			productName = "fetch-a-cause";
-			productReference = 29BAA3202D73B7B6000197CF /* Fetch-A-Cause.app */;
+			productReference = 29BAA3202D73B7B6000197CF /* fetch-a-cause.app */;
 			productType = "com.apple.product-type.application";
 		};
 		29BAA32F2D73B7B8000197CF /* fetch-a-causeTests */ = {
@@ -234,6 +237,7 @@
 			packageReferences = (
 				F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 				296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F650E98C2D74E3C300C95076 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 29BAA3212D73B7B6000197CF /* Products */;
@@ -617,6 +621,14 @@
 				kind = branch;
 			};
 		};
+		F650E98C2D74E3C300C95076 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google-gemini/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -644,6 +656,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
 			productName = MapboxMaps;
+		};
+		F650E98D2D74E3C300C95076 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F650E98C2D74E3C300C95076 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
