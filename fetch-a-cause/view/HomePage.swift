@@ -1,6 +1,9 @@
 import SwiftUI
 
 struct HomePage: View {
+    // Declare a state variable to hold the parsed opportunities (optional, to observe data changes)
+    @State private var opportunities: [VolunteeringOpportunity] = []
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -59,19 +62,23 @@ struct HomePage: View {
                 }
 
                 BottomNavigationBar()
-
-                // Home Indicator
-                Rectangle()
-                    .frame(width: 134, height: 5)
-                    .cornerRadius(100)
-                    .foregroundColor(Color(red: 174/255, green: 174/255, blue: 174/255))
-                    .padding(.top, 20)
-                    .padding(.bottom, 9)
             }
             .background(Color.white)
             .cornerRadius(32)
         }
         .background(Color.white)
         .frame(maxWidth: 480)
+        .onAppear {
+            // Parse the CSV file and upload the opportunities to Firebase when the page appears
+//            if let opportunities = parseCSV(fileName: "Volunteer Mock Data") {
+//                uploadVolunteeringOpportunities(opportunities: opportunities)
+//            }
+            if let opportunities = DataManager().parseTSV(fileName: "Volunteer Mock Data") {
+                print("Parsed opportunities: \(opportunities)") // Debug print
+                DataManager().uploadVolunteeringOpportunities(opportunities: opportunities)
+            } else {
+                print("Failed to parse CSV.")
+            }
+        }
     }
 }
