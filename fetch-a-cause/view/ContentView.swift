@@ -1,17 +1,7 @@
-//import SwiftUI
 //
-//struct ContentView: View {
-//    var body: some View {
-//        MapViewRepresentable()
-//            .edgesIgnoringSafeArea(.all)
-//    }
-//}
-
-
-
 import SwiftUI
 import FirebaseDatabase
-
+//
 struct ContentView: View {
     @State private var opportunities: [VolunteeringOpportunity] = []
     private let databaseRef = Database.database().reference()
@@ -77,3 +67,4 @@ struct ContentView: View {
         }
     }
 }
+
