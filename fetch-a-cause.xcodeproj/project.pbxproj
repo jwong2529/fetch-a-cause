@@ -35,7 +35,7 @@
 /* Begin PBXFileReference section */
 		296025152D73D28E003CC5FC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		296025412D73E01A003CC5FC /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
-		29BAA3202D73B7B6000197CF /* fetch-a-cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fetch-a-cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29BAA3202D73B7B6000197CF /* Fetch-A-Cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch-A-Cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA3302D73B7B8000197CF /* fetch-a-causeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA33A2D73B7B8000197CF /* fetch-a-causeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,7 +116,7 @@
 		29BAA3212D73B7B6000197CF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				29BAA3202D73B7B6000197CF /* fetch-a-cause.app */,
+				29BAA3202D73B7B6000197CF /* Fetch-A-Cause.app */,
 				29BAA3302D73B7B8000197CF /* fetch-a-causeTests.xctest */,
 				29BAA33A2D73B7B8000197CF /* fetch-a-causeUITests.xctest */,
 			);
@@ -150,7 +150,7 @@
 				2960254E2D73F613003CC5FC /* FirebaseDatabase */,
 			);
 			productName = "fetch-a-cause";
-			productReference = 29BAA3202D73B7B6000197CF /* fetch-a-cause.app */;
+			productReference = 29BAA3202D73B7B6000197CF /* Fetch-A-Cause.app */;
 			productType = "com.apple.product-type.application";
 		};
 		29BAA32F2D73B7B8000197CF /* fetch-a-causeTests */ = {
@@ -453,7 +453,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetchApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Fetch-A-Cause";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,7 +484,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetchApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Fetch-A-Cause";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
