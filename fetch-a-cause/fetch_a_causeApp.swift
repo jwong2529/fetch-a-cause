@@ -33,6 +33,7 @@ struct fetch_a_causeApp: App {
         WindowGroup {
 //            HomePage()  // Pass the binding to HomePage
             //BottomNavigationBar(selectedTab: $selectedTab)
+            CategoriesPage()
         }
     }
 }

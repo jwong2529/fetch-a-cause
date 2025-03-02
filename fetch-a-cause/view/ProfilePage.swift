@@ -16,6 +16,8 @@ struct ProfilePage: View {
                     aspectRatio: 0.42
                 ) {
                     print("Image 1 tapped")
+                    
+                    
                     // Handle specific action for this image
                 }
             }
