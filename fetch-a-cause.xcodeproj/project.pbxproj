@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		296025082D73C6B3003CC5FC /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 296025072D73C6B3003CC5FC /* MapboxMaps */; };
+		F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = F650E7E72D73D3AA00C95076 /* MapboxMaps */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				296025082D73C6B3003CC5FC /* MapboxMaps in Frameworks */,
+				F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 			);
 			name = "fetch-a-cause";
 			packageProductDependencies = (
-				296025072D73C6B3003CC5FC /* MapboxMaps */,
+				F650E7E72D73D3AA00C95076 /* MapboxMaps */,
 			);
 			productName = "fetch-a-cause";
 			productReference = 29BAA3202D73B7B6000197CF /* fetch-a-cause.app */;
@@ -202,7 +202,7 @@
 			mainGroup = 29BAA3172D73B7B6000197CF;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				296025062D73C6B3003CC5FC /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 29BAA3212D73B7B6000197CF /* Products */;
@@ -405,7 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fetch-a-cause/Preview Content\"";
-				DEVELOPMENT_TEAM = KV4D48PA65;
+				DEVELOPMENT_TEAM = YR7X66DC3L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -419,7 +419,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.VolunteeringApp.fetch-a-cause";
+				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -435,7 +435,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fetch-a-cause/Preview Content\"";
-				DEVELOPMENT_TEAM = KV4D48PA65;
+				DEVELOPMENT_TEAM = YR7X66DC3L;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -449,7 +449,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.VolunteeringApp.fetch-a-cause";
+				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -567,7 +567,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		296025062D73C6B3003CC5FC /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+		F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios";
 			requirement = {
@@ -578,9 +578,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		296025072D73C6B3003CC5FC /* MapboxMaps */ = {
+		F650E7E72D73D3AA00C95076 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 296025062D73C6B3003CC5FC /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			package = F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
 			productName = MapboxMaps;
 		};
 /* End XCSwiftPackageProductDependency section */
