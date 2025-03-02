@@ -1,9 +1,9 @@
-//
+
 //  ProfilePage.swift
 //  fetch-a-cause
 //
 //  Created by Tiffany Mo on 3/1/25.
-//
+
 
 import SwiftUI
 
@@ -43,3 +43,4 @@ struct ProfilePage_Previews: PreviewProvider {
         ProfilePage()
     }
 }
+

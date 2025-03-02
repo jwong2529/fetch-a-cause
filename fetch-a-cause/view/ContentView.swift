@@ -12,7 +12,7 @@ struct ContentView: View {
                 Text("Loading locations...")
             } else {
                 MapView(opportunities: opportunities)
-                    .edgesIgnoringSafeArea(.all)
+                    .edgesIgnoringSafeArea(.top)
             }
         }
         .onAppear {

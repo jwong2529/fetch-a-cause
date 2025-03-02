@@ -31,7 +31,11 @@ struct CategoriesPage: View {
                                 eventName: opportunity.eventName,
                                 description: opportunity.description,
                                 backgroundColor: Color.white,
-                                actionColor: Color.actionOrange
+                                actionColor: Color.actionOrange,
+                                date: opportunity.date,
+                                time: opportunity.time,
+                                orgName: opportunity.orgName,
+                                id: opportunity.id
                             )
                         }
                     }
