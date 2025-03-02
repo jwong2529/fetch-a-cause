@@ -30,7 +30,7 @@ struct fetch_a_causeApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            ContentView()
         }
     }
 }

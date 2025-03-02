@@ -75,7 +75,7 @@ struct HomePage: View {
 //            }
             if let opportunities = DataManager().parseTSV(fileName: "Volunteer Mock Data") {
                 print("Parsed opportunities: \(opportunities)") // Debug print
-                DataManager().uploadVolunteeringOpportunities(opportunities: opportunities)
+//                DataManager().uploadVolunteeringOpportunities(opportunities: opportunities)
             } else {
                 print("Failed to parse CSV.")
             }
