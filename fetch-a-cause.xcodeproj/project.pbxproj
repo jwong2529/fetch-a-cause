@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		296025152D73D28E003CC5FC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		296025412D73E01A003CC5FC /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		29BAA3202D73B7B6000197CF /* fetch-a-cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fetch-a-cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA3302D73B7B8000197CF /* fetch-a-causeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA33A2D73B7B8000197CF /* fetch-a-causeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +71,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2960254F2D73F613003CC5FC /* FirebaseDatabase in Frameworks */,
+				296025492D73F613003CC5FC /* FirebaseAnalytics in Frameworks */,
+				2960254B2D73F613003CC5FC /* FirebaseAuth in Frameworks */,
+				2960254D2D73F613003CC5FC /* FirebaseCore in Frameworks */,
 				F650E7E82D73D3AA00C95076 /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +99,7 @@
 		29BAA3172D73B7B6000197CF = {
 			isa = PBXGroup;
 			children = (
+				296025412D73E01A003CC5FC /* AppConfig.xcconfig */,
 				296025152D73D28E003CC5FC /* .gitignore */,
 				29BAA3222D73B7B6000197CF /* fetch-a-cause */,
 				29BAA3332D73B7B8000197CF /* fetch-a-causeTests */,
@@ -133,6 +139,10 @@
 			name = "fetch-a-cause";
 			packageProductDependencies = (
 				F650E7E72D73D3AA00C95076 /* MapboxMaps */,
+				296025482D73F613003CC5FC /* FirebaseAnalytics */,
+				2960254A2D73F613003CC5FC /* FirebaseAuth */,
+				2960254C2D73F613003CC5FC /* FirebaseCore */,
+				2960254E2D73F613003CC5FC /* FirebaseDatabase */,
 			);
 			productName = "fetch-a-cause";
 			productReference = 29BAA3202D73B7B6000197CF /* fetch-a-cause.app */;
@@ -218,6 +228,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+				296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 29BAA3212D73B7B6000197CF /* Products */;
@@ -236,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296025422D73E024003CC5FC /* AppConfig.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +432,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fetch-a-cause/Preview Content\"";
-				DEVELOPMENT_TEAM = YR7X66DC3L;
+				DEVELOPMENT_TEAM = KV4D48PA65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fetch-a-cause/Info.plist";
@@ -435,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,7 +463,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"fetch-a-cause/Preview Content\"";
-				DEVELOPMENT_TEAM = YR7X66DC3L;
+				DEVELOPMENT_TEAM = KV4D48PA65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "fetch-a-cause/Info.plist";
@@ -466,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.VolunteeringApp.fetchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -584,6 +596,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
 		F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios";
@@ -595,6 +615,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		296025482D73F613003CC5FC /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		2960254A2D73F613003CC5FC /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2960254C2D73F613003CC5FC /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		2960254E2D73F613003CC5FC /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296025472D73F613003CC5FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		F650E7E72D73D3AA00C95076 /* MapboxMaps */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F650E7E62D73D3AA00C95076 /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
