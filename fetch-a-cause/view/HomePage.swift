@@ -32,15 +32,39 @@ struct HomePage: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 16) {
                                 CategoryCard(
-                                    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/1506f8007976343274f492d9fabab3a7846c0c0e2867f0c6febd80ad7fa4d35b?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62",
+                                    image: "FoodSecurity",
                                     title: "Food Security",
                                     backgroundColor: Color(red: 227/255, green: 237/255, blue: 251/255)
                                 )
 
                                 CategoryCard(
-                                    image: "https://cdn.builder.io/api/v1/image/assets/TEMP/deb9814689af20c035d55cd2e01b78f01107e3380a1250141a990dd5c78a8a32?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62",
-                                    title: "Sports and Recreation",
+                                    image: "Health&Medicine",
+                                    title: "Health & Medicine",
                                     backgroundColor: Color(red: 244/255, green: 232/255, blue: 249/255)
+                                )
+
+                                CategoryCard(
+                                    image: "EnvironmentalConservation",
+                                    title: "Environment Conservation",
+                                    backgroundColor: Color(red: 230/255, green: 250/255, blue: 234/255)
+                                )
+
+                                CategoryCard(
+                                    image: "CommunityService",
+                                    title: "Community Service",
+                                    backgroundColor: Color(red: 255/255, green: 242/255, blue: 204/255)
+                                )
+
+                                CategoryCard(
+                                    image: "SocialServices",
+                                    title: "Social Services",
+                                    backgroundColor: Color(red: 255/255, green: 224/255, blue: 224/255)
+                                )
+
+                                CategoryCard(
+                                    image: "Arts&Culture",
+                                    title: "Arts & Culture",
+                                    backgroundColor: Color(red: 224/255, green: 245/255, blue: 255/255)
                                 )
                             }
                             .padding(.horizontal, 20)
