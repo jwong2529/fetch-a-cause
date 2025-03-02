@@ -11,7 +11,7 @@ import SwiftUI
 struct fetch_a_causeApp: App {
     var body: some Scene {
         WindowGroup {
-            HomePage()
+            PostPage(post: PostData.sample)
         }
     }
 }
