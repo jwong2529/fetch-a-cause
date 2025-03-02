@@ -61,7 +61,6 @@ struct HomePage: View {
                     .padding(.bottom, 40)
                 }
 
-                BottomNavigationBar()
             }
             .background(Color.white)
             .cornerRadius(32)

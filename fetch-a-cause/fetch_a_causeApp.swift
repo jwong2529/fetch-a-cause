@@ -27,10 +27,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct fetch_a_causeApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+    @State private var selectedTab: Tab = .home  // Declare the state variable to manage selected tab
+
     var body: some Scene {
         WindowGroup {
-            PostPage(post: PostData.sample)
+//            HomePage()  // Pass the binding to HomePage
+            BottomNavigationBar(selectedTab: $selectedTab)
         }
     }
 }
