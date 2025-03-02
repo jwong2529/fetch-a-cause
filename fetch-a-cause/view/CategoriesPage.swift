@@ -1,17 +1,16 @@
-//
-//  CategoriesPage.swift
-//  fetch-a-cause
-//
-//  Created by Tiffany Mo on 3/2/25.
-//
+
 
 import SwiftUI
+import FirebaseDatabase
 
 struct CategoriesPage: View {
+    let categoryName: String
+    @State private var opportunities: [VolunteeringOpportunity] = []
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                Text("Food Security")
+                Text(categoryName) // Display the category name passed to the view
                     .font(.custom("Rubik-Bold", size: 30))
                     .foregroundColor(Color.primaryText)
                     .padding(.bottom, 13)
@@ -22,30 +21,20 @@ struct CategoriesPage: View {
                     .padding(.bottom, 43)
 
                 VStack(spacing: 26) {
-                    EventCard(
-                        title: "Pantry Distribution",
-                        description: "Help make more food available for seniors, those experiencing homelessness, and families.",
-                        imageName: "https://cdn.builder.io/api/v1/image/assets/TEMP/15a58d7426737f909bcc2ec6cccfe61c4df0897ba6bc67e1ca707b93f8b62e4c?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62",
-                        backgroundColor: Color.pinkBackground,
-                        actionColor: Color.actionPink
-                    )
-
-                    EventCard(
-                        title: "Breakfast for Unhoused",
-                        description: "SFC offer a unique range of services to sustain and empower those in need.",
-                        imageName: "https://cdn.builder.io/api/v1/image/assets/TEMP/a5d91962b41d21ab679b8452a9db0ffbc123147ae2fd36d8825db09063b41957?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62",
-                        backgroundColor: Color.orangeBackground,
-                        actionColor: Color.actionOrange,
-                        showArrow: true
-                    )
-
-                    EventCard(
-                        title: "Community Breakfast",
-                        description: "Serve LA by providing meals, recovery, and holistic support to the unseen among us in the city.",
-                        imageName: "https://cdn.builder.io/api/v1/image/assets/TEMP/9296c2110619dc6c3f1de9ccd3b9f63cd4a2414ab710fc645bf20ff67bbdb7bb?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62",
-                        backgroundColor: Color.pinkBackground,
-                        actionColor: Color.actionPink
-                    )
+                    if opportunities.isEmpty {
+                        Text("No events found for this category.")
+                            .font(.custom("Rubik-Regular", size: 16))
+                            .foregroundColor(Color.primaryText)
+                    } else {
+                        ForEach(opportunities, id: \.id) { opportunity in
+                            EventCard(
+                                eventName: opportunity.eventName,
+                                description: opportunity.description,
+                                backgroundColor: Color.white,
+                                actionColor: Color.actionOrange
+                            )
+                        }
+                    }
                 }
             }
             .padding(.horizontal, 25)
@@ -54,11 +43,61 @@ struct CategoriesPage: View {
             .cornerRadius(40)
         }
         .background(Color.white)
+        .onAppear {
+            // Fetch opportunities for the selected category when the view appears
+            fetchOpportunitiesByCategory(categoryName: self.categoryName) { fetchedOpportunities in
+                if let fetchedOpportunities = fetchedOpportunities {
+                    DispatchQueue.main.async {
+                        self.opportunities = fetchedOpportunities
+                    }
+                }
+            }
+        }
     }
-}
 
-struct CategoriesPage_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoriesPage()
+    // Function to fetch opportunities based on category directly in CategoriesPage
+    private func fetchOpportunitiesByCategory(categoryName: String, completion: @escaping ([VolunteeringOpportunity]?) -> Void) {
+        let ref = Database.database().reference().child("volunteering_opportunities")
+        
+        ref.observeSingleEvent(of: .value) { snapshot in
+            var opportunities: [VolunteeringOpportunity] = []
+            
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                   let dict = snapshot.value as? [String: Any] {
+                    // Parse the dictionary into a VolunteeringOpportunity object
+                    if let id = Int(snapshot.key),
+                       let orgName = dict["orgName"] as? String,
+                       let eventName = dict["eventName"] as? String,
+                       let category = dict["category"] as? String,
+                       let date = dict["date"] as? String,
+                       let time = dict["time"] as? String,
+                       let description = dict["description"] as? String,
+                       let link = dict["link"] as? String,
+                       let latitude = dict["latitude"] as? Double,
+                       let longitude = dict["longitude"] as? Double {
+                        let opportunity = VolunteeringOpportunity(
+                            id: id,
+                            orgName: orgName,
+                            eventName: eventName,
+                            category: category,
+                            date: date,
+                            time: time,
+                            description: description,
+                            link: link,
+                            latitude: latitude,
+                            longitude: longitude
+                        )
+                        // Only add opportunities that match the category
+                        if opportunity.category == categoryName {
+                            opportunities.append(opportunity)
+                        }
+                    }
+                }
+            }
+            
+//            completion(opportunities)
+            self.opportunities = opportunities
+        }
     }
 }
