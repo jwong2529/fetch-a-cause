@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct EventCard: View {
-    let title: String
+    let eventName: String
     let description: String
-    let imageName: String
     let backgroundColor: Color
     let actionColor: Color
     var showArrow: Bool = false
@@ -18,13 +17,16 @@ struct EventCard: View {
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(title)
+                Text(eventName)
                     .font(.custom("Rubik-Regular", size: 20))
                     .lineSpacing(0)
+                    .foregroundColor(.black)
 
                 Text(description)
                     .font(.custom("Rubik-Regular", size: 12))
                     .lineSpacing(4)
+                    .foregroundColor(.black)
+
 
                 HStack(spacing: 7) {
                     Text("Join Now")
@@ -46,16 +48,6 @@ struct EventCard: View {
             }
 
             Spacer()
-
-            AsyncImage(url: URL(string: "\(imageName)&format=webp")) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-            } placeholder: {
-                Color.clear
-            }
-            .frame(width: showArrow ? 79 : 97)
-            .padding(.top, showArrow ? 34 : 13)
         }
         .padding(.horizontal, 25)
         .padding(.vertical, 14)
@@ -71,9 +63,8 @@ struct EventCard: View {
 struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
         EventCard(
-            title: "Sample Event",
+            eventName: "Sample Event",
             description: "Sample description",
-            imageName: "https://cdn.builder.io/api/v1/image/assets/TEMP/15a58d7426737f909bcc2ec6cccfe61c4df0897ba6bc67e1ca707b93f8b62e4c?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62",
             backgroundColor: .pinkBackground,
             actionColor: .actionPink
         )
