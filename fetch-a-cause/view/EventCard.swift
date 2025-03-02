@@ -13,7 +13,7 @@ struct EventCard: View {
     var showArrow: Bool = false
     
     @State private var showAlert = false // To control the alert visibility
-    
+        
     func addVolunteerOpportunityToUser() {
         // Get a reference to the Firebase database
         let databaseRef = Database.database().reference()
@@ -23,11 +23,17 @@ struct EventCard: View {
         
         // Get the current user's volunteering opportunities
         userRef.child("volunteeringOpportunities").observeSingleEvent(of: .value) { snapshot in
-            var opportunities = snapshot.value as? [String] ?? [] // Ensure the list is an array of strings
+            var opportunities = snapshot.value as? [[String: Any]] ?? [] // Now it's an array of dictionaries with id and timestamp
             
-            // Convert the event ID (Int) to String before appending
+            // Add the event ID and timestamp to the user's opportunities list
             let eventIDString = String(id)
-            opportunities.append(eventIDString)
+            let timestamp = ISO8601DateFormatter().string(from: Date()) // ISO 8601 formatted timestamp
+            
+            // Add a dictionary with both ID and timestamp
+            opportunities.append([
+                "id": eventIDString,
+                "timestamp": timestamp
+            ])
             
             // Update the user's opportunities in Firebase
             userRef.child("volunteeringOpportunities").setValue(opportunities) { error, _ in
@@ -39,6 +45,7 @@ struct EventCard: View {
             }
         }
     }
+
     
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
