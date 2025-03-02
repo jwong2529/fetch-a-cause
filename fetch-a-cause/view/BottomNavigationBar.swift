@@ -12,11 +12,11 @@ struct BottomNavigationBar: View {
                 }
                 .tag(Tab.home)
 
-            MapView()
-                .tabItem {
-                    Label(Tab.search.rawValue, systemImage: Tab.search.iconName)
-                }
-                .tag(Tab.search)
+//            MapView(opportunities: <#[VolunteeringOpportunity]#>)
+//                .tabItem {
+//                    Label(Tab.search.rawValue, systemImage: Tab.search.iconName)
+//                }
+//                .tag(Tab.search)
 
             ProfilePage()
                 .tabItem {
