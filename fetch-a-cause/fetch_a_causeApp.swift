@@ -32,8 +32,7 @@ struct fetch_a_causeApp: App {
     var body: some Scene {
         WindowGroup {
 //            HomePage()  // Pass the binding to HomePage
-            //BottomNavigationBar(selectedTab: $selectedTab)
-            CategoriesPage()
+            BottomNavigationBar(selectedTab: $selectedTab)
         }
     }
 }
