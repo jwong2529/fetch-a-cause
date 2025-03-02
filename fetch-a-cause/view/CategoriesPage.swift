@@ -34,8 +34,8 @@ struct CategoriesPage: View {
                                 actionColor: Color.actionOrange,
                                 date: opportunity.date,
                                 time: opportunity.time,
-                                orgName: opportunity.orgName
-                                
+                                orgName: opportunity.orgName,
+                                id: opportunity.id
                             )
                         }
                     }

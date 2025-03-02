@@ -3,7 +3,8 @@ import SwiftUI
 struct HomePage: View {
     // Declare a state variable to hold the parsed opportunities (optional, to observe data changes)
     @State private var opportunities: [VolunteeringOpportunity] = []
-
+    @StateObject private var userManager = UserManager()
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -80,6 +81,7 @@ struct HomePage: View {
                 } else {
                     print("Failed to parse CSV.")
                 }
+                userManager.initializeUser()
             }
         }
     }

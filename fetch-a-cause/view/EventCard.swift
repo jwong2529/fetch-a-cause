@@ -1,11 +1,5 @@
-//
-//  EventCard.swift
-//  fetch-a-cause
-//
-//  Created by Tiffany Mo on 3/2/25.
-//
-
 import SwiftUI
+import Firebase
 
 struct EventCard: View {
     let eventName: String
@@ -15,8 +9,37 @@ struct EventCard: View {
     let date: String
     let time: String
     let orgName: String
+    let id: Int // Event ID (as Integer)
     var showArrow: Bool = false
-
+    
+    @State private var showAlert = false // To control the alert visibility
+    
+    func addVolunteerOpportunityToUser() {
+        // Get a reference to the Firebase database
+        let databaseRef = Database.database().reference()
+        
+        // Reference to the "users" node and their volunteering opportunities
+        let userRef = databaseRef.child("users").child("defaultUser") // Assuming "defaultUser"
+        
+        // Get the current user's volunteering opportunities
+        userRef.child("volunteeringOpportunities").observeSingleEvent(of: .value) { snapshot in
+            var opportunities = snapshot.value as? [String] ?? [] // Ensure the list is an array of strings
+            
+            // Convert the event ID (Int) to String before appending
+            let eventIDString = String(id)
+            opportunities.append(eventIDString)
+            
+            // Update the user's opportunities in Firebase
+            userRef.child("volunteeringOpportunities").setValue(opportunities) { error, _ in
+                if let error = error {
+                    print("Error adding volunteer opportunity: \(error.localizedDescription)")
+                } else {
+                    print("Volunteer opportunity added successfully!")
+                }
+            }
+        }
+    }
+    
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             VStack(alignment: .leading, spacing: 8) {
@@ -49,8 +72,15 @@ struct EventCard: View {
 
                 HStack(spacing: 7) {
                     Text("Join Now")
-                        .font(.custom("Rubik-Bold", size: 20))
+                        .font(.custom("Rubik-Bold", size: 20)) // Bold text
                         .foregroundColor(actionColor)
+                        .onTapGesture {
+                            // Show alert
+                            showAlert = true
+                            
+                            // Add the event ID to the user's volunteering opportunities
+                            addVolunteerOpportunityToUser()
+                        }
 
                     if showArrow {
                         AsyncImage(url: URL(string: "https://cdn.builder.io/api/v1/image/assets/TEMP/2ec7c1c58ad0c9692b875e19ac0adff656844bbd55c10de246d1959a3bb758d3?placeholderIfAbsent=true&apiKey=4822da42d44648d1bf97a175a2e7cb62&format=webp")) { image in
@@ -76,17 +106,13 @@ struct EventCard: View {
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.cardBorder, lineWidth: 1)
         )
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Thank You for Volunteering"),
+                message: Text("Thank you for volunteering with \(orgName)."),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 
-//struct EventCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventCard(
-//            eventName: "Sample Event",
-//            description: "Sample description",
-//            backgroundColor: .pinkBackground,
-//            actionColor: .actionPink
-//        )
-//        .padding()
-//    }
-//}
