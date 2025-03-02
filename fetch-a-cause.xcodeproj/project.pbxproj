@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		296025082D73C6B3003CC5FC /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 296025072D73C6B3003CC5FC /* MapboxMaps */; };
+		296025172D73D290003CC5FC /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 296025152D73D28E003CC5FC /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +29,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		296025152D73D28E003CC5FC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		29BAA3202D73B7B6000197CF /* fetch-a-cause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "fetch-a-cause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA3302D73B7B8000197CF /* fetch-a-causeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BAA33A2D73B7B8000197CF /* fetch-a-causeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fetch-a-causeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		296025192D73D97C003CC5FC /* Exceptions for "fetch-a-cause" folder in "fetch-a-cause" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 29BAA31F2D73B7B6000197CF /* fetch-a-cause */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		29BAA3222D73B7B6000197CF /* fetch-a-cause */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				296025192D73D97C003CC5FC /* Exceptions for "fetch-a-cause" folder in "fetch-a-cause" target */,
+			);
 			path = "fetch-a-cause";
 			sourceTree = "<group>";
 		};
@@ -80,6 +95,7 @@
 		29BAA3172D73B7B6000197CF = {
 			isa = PBXGroup;
 			children = (
+				296025152D73D28E003CC5FC /* .gitignore */,
 				29BAA3222D73B7B6000197CF /* fetch-a-cause */,
 				29BAA3332D73B7B8000197CF /* fetch-a-causeTests */,
 				29BAA33D2D73B7B8000197CF /* fetch-a-causeUITests */,
@@ -221,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296025172D73D290003CC5FC /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +425,7 @@
 				DEVELOPMENT_TEAM = KV4D48PA65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "fetch-a-cause/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -438,6 +456,7 @@
 				DEVELOPMENT_TEAM = KV4D48PA65;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "fetch-a-cause/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
